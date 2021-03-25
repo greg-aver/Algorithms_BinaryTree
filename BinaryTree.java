@@ -21,10 +21,10 @@
 
     private ArrayList<BSTNode<T>> postOrderRecursiveDeepAllNode(ArrayList<BSTNode<T>> listAllNodes, BSTNode<T> rootNode) {
         if (rootNode.getLeftChild() != null) {
-            inOrderRecursiveDeepAllNode(listAllNodes, rootNode.getLeftChild());
+            postOrderRecursiveDeepAllNode(listAllNodes, rootNode.getLeftChild());
         }
         if (rootNode.getRightChild() != null) {
-            inOrderRecursiveDeepAllNode(listAllNodes, rootNode.getRightChild());
+            postOrderRecursiveDeepAllNode(listAllNodes, rootNode.getRightChild());
         }
         listAllNodes.add(rootNode);
         return listAllNodes;
@@ -33,10 +33,10 @@
     private ArrayList<BSTNode<T>> preOrderRecursiveDeepAllNode(ArrayList<BSTNode<T>> listAllNodes, BSTNode<T> rootNode) {
         listAllNodes.add(rootNode);
         if (rootNode.getLeftChild() != null) {
-            inOrderRecursiveDeepAllNode(listAllNodes, rootNode.getLeftChild());
+            preOrderRecursiveDeepAllNode(listAllNodes, rootNode.getLeftChild());
         }
         if (rootNode.getRightChild() != null) {
-            inOrderRecursiveDeepAllNode(listAllNodes, rootNode.getRightChild());
+            preOrderRecursiveDeepAllNode(listAllNodes, rootNode.getRightChild());
         }
         return listAllNodes;
     }
